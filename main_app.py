@@ -10,7 +10,9 @@ from bokeh.plotting import figure
 from bokeh.palettes import Dark2_5 as palette
 import itertools
 import json
-
+from bokeh.core.validation import silence
+from bokeh.core.validation.warnings import MISSING_RENDERERS
+silence(MISSING_RENDERERS, True)
 
 
 
