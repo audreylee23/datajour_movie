@@ -55,7 +55,7 @@ st.write("2000년대의 경우, 앞선 워드클라우드에서는 거의 보이
 st.write("마지막으로 2010년대의 경우, 앞선 세 워드클라우드에서 모두 큰 비중을 차지했던 '사랑'이라는 키워드의 크기가 급감한 것이 가장 뚜렷한 특징이다. 또 2000년대에 점점 커지고 있던 '세계'와 '세상'이라는 키워드가 메인 키워드급으로 커진 것도 눈에 띈다.")
 
 ###
-st.markdown("# 시대별 top50 영화의 장르 및 시놉시스 키워드 트렌드를 알아보자")
+st.subheader("시대별 top50 영화의 장르 및 시놉시스 키워드 트렌드를 알아보자")
 
 st.markdown("## 시대별 top50 영화의 장르를 알아보자")
 
@@ -111,6 +111,169 @@ fig3.height = 400
 st.bokeh_chart(fig3, use_container_width=True)
 
 
+
+st.header("주요 장르별 영화 시놉시스 키워드의 특이한 변화 추이를 알아보자")
+
+option = st.selectbox('장르를 선택하세요!',
+                     ['드라마', '액션', '범죄', '판타지', '로맨스', '코미디', '모험', '스릴러', '가족', '공포', '애니메이션', '미스터리'])	
+
+if option == '드라마':
+    st.write('사랑')
+    st.image('data/drama_keyword_love.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('결혼')
+    st.image('data/drama_keyword_marraige.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '액션':
+    st.write('요원')
+    st.image('data/action_keyword_agent.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('조직')
+    st.image('data/action_keyword_crew.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('세상')
+    st.image('data/action_keyword_globe.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('경찰')
+    st.image('data/action_keyword_police.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('구출')
+    st.image('data/action_keyword_save.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('세계')
+    st.image('data/action_keyword_world.jpeg')
+    st.write('')
+    st.write('')
+    
+elif option == '범죄':
+    st.write('살인 & 사기')
+    st.image('data/crime_keyword_murder&fraud.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('조직')
+    st.image('data/crime_keyword_criminal_crew.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('경찰')
+    st.image('data/crime_keyword_police.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '판타지':
+    st.write('세상')
+    st.image('data/fantasy_keyword_globe.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('전쟁')
+    st.image('data/fantasy_keyword_war.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '로맨스':
+    st.write('행복')
+    st.image('data/romance_keyword_happiness.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('마음')
+    st.image('data/romance_keyword_heart.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('남편&아내')
+    st.image('data/romance_keyword_husband&wife.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '코미디':
+    st.write('세상')
+    st.image('data/comedy_keyword_globe.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('경찰')
+    st.image('data/comedy_keyword_police.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '모험':
+    st.write('세계')
+    st.image('data/adventure_keyword_world.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('세상')
+    st.image('data/adventure_keyword_globe.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('위협')
+    st.image('data/adventure_keyword_threat.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('전쟁')
+    st.image('data/adventure_keyword_war.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '스릴러':
+    st.write('딸')
+    st.image('data/thriller_keyword_daughter.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('세상')
+    st.image('data/thriller_keyword_globe.jpeg')
+    st.write('')
+    st.write('')
+
+    st.write('의문')
+    st.image('data/thriller_keyword_question.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '가족':
+    st.write('가족')
+    st.image('data/family_keyword_family.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '공포':
+    st.write('공포')
+    st.image('data/horror_keyword_horror.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '애니메이션':
+    st.write('모험')
+    st.image('data/animation_keyword_adventure.jpeg')
+    st.write('')
+    st.write('')
+
+elif option == '미스터리':
+    st.write('죽음')
+    st.image('data/mystery_keyword_death.jpeg')
+    st.write('')
+    st.write('')
+
 ###
 def clean_synopsis(syn):
     return str(syn).replace('[', ' ').replace(']', ' ').replace('\'', ' ').replace('\"', ' ').replace('{', '').replace('}', '').strip()
@@ -146,7 +309,7 @@ else:
 
     for idx, row in df_selected.iterrows():
         st.subheader(row.title)
-        intro = f'{row.audience :,}명이 관람한 {row.year}년의 {(idx+1) % 50}위 영화'
+        intro = f'{row.audience :,}명이 관람한 {row.year}년의 {(idx+1) % 50}위 영화. 장르: {row.genre}'
         st.caption(intro)
 
         bold_synopsis = row.synopsis_cleaned
