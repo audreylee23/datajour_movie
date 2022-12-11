@@ -115,7 +115,7 @@ st.bokeh_chart(fig3, use_container_width=True)
 st.header("주요 장르별 영화 시놉시스 키워드의 특이한 변화 추이를 알아보자")
 
 option = st.selectbox('장르를 선택하세요!',
-                     ['드라마', '액션', '범죄', '판타지', '로맨스', '코미디', '모험', '스릴러', '가족', '공포', '애니메이션'])	
+                     ['드라마', '액션', '범죄', '판타지', '코미디', '모험', '스릴러'])	
 
 if option == '드라마':
     st.write('사랑')
@@ -134,11 +134,6 @@ elif option == '액션':
     st.write('')
     st.write('')
 
-    st.write('조직')
-    st.image('data/action_keyword_crew.jpeg')
-    st.write('')
-    st.write('')
-
     st.write('세상')
     st.image('data/action_keyword_globe.jpeg')
     st.write('')
@@ -146,11 +141,6 @@ elif option == '액션':
 
     st.write('경찰')
     st.image('data/action_keyword_police.jpeg')
-    st.write('')
-    st.write('')
-
-    st.write('구출')
-    st.image('data/action_keyword_save.jpeg')
     st.write('')
     st.write('')
 
@@ -165,51 +155,15 @@ elif option == '범죄':
     st.write('')
     st.write('')
 
-    st.write('조직')
-    st.image('data/crime_keyword_criminal_crew.jpeg')
-    st.write('')
-    st.write('')
-
-    st.write('경찰')
-    st.image('data/crime_keyword_police.jpeg')
-    st.write('')
-    st.write('')
-
 elif option == '판타지':
     st.write('세상')
     st.image('data/fantasy_keyword_globe.jpeg')
     st.write('')
     st.write('')
 
-    st.write('전쟁')
-    st.image('data/fantasy_keyword_war.jpeg')
-    st.write('')
-    st.write('')
-
-elif option == '로맨스':
-    st.write('행복')
-    st.image('data/romance_keyword_happiness.jpeg')
-    st.write('')
-    st.write('')
-
-    st.write('마음')
-    st.image('data/romance_keyword_heart.jpeg')
-    st.write('')
-    st.write('')
-
-    st.write('남편&아내')
-    st.image('data/romance_keyword_husband&wife.jpeg')
-    st.write('')
-    st.write('')
-
 elif option == '코미디':
     st.write('세상')
     st.image('data/comedy_keyword_globe.jpeg')
-    st.write('')
-    st.write('')
-
-    st.write('경찰')
-    st.image('data/comedy_keyword_police.jpeg')
     st.write('')
     st.write('')
 
@@ -235,11 +189,6 @@ elif option == '모험':
     st.write('')
 
 elif option == '스릴러':
-    st.write('딸')
-    st.image('data/thriller_keyword_daughter.jpeg')
-    st.write('')
-    st.write('')
-
     st.write('세상')
     st.image('data/thriller_keyword_globe.jpeg')
     st.write('')
@@ -247,24 +196,6 @@ elif option == '스릴러':
 
     st.write('의문')
     st.image('data/thriller_keyword_question.jpeg')
-    st.write('')
-    st.write('')
-
-elif option == '가족':
-    st.write('가족')
-    st.image('data/family_keyword_family.jpeg')
-    st.write('')
-    st.write('')
-
-elif option == '공포':
-    st.write('공포')
-    st.image('data/horror_keyword_horror.jpeg')
-    st.write('')
-    st.write('')
-
-elif option == '애니메이션':
-    st.write('모험')
-    st.image('data/animation_keyword_adventure.jpeg')
     st.write('')
     st.write('')
 
