@@ -115,7 +115,7 @@ st.bokeh_chart(fig3, use_container_width=True)
 st.header("주요 장르별 영화 시놉시스 키워드의 특이한 변화 추이를 알아보자")
 
 option = st.selectbox('장르를 선택하세요!',
-                     ['드라마', '액션', '범죄', '판타지', '로맨스', '코미디', '모험', '스릴러', '가족', '공포', '애니메이션', '미스터리'])	
+                     ['드라마', '액션', '범죄', '판타지', '로맨스', '코미디', '모험', '스릴러', '가족', '공포', '애니메이션'])	
 
 if option == '드라마':
     st.write('사랑')
@@ -161,7 +161,7 @@ elif option == '액션':
     
 elif option == '범죄':
     st.write('살인 & 사기')
-    st.image('data/crime_keyword_murder&fraud.jpeg')
+    st.image('data/crime_keyword_murder_fraud.jpeg')
     st.write('')
     st.write('')
 
@@ -268,11 +268,6 @@ elif option == '애니메이션':
     st.write('')
     st.write('')
 
-elif option == '미스터리':
-    st.write('죽음')
-    st.image('data/mystery_keyword_death.jpeg')
-    st.write('')
-    st.write('')
 
 ###
 def clean_synopsis(syn):
